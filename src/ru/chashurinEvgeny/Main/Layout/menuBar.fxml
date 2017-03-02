@@ -10,7 +10,7 @@
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
-                <Menu text="Игра">
+                <Menu text="Файл">
                     <items>
                         <MenuItem accelerator="F2" text="Новая игра" />
                         <MenuItem accelerator="F3" text="Параметры" />
