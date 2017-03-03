@@ -18,6 +18,9 @@ public class Main extends Application {
     public void start(Stage primaryStage){
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Комплексный расчет");
+        this.primaryStage.setMaximized(true);
+        this.primaryStage.setMinHeight(768);
+        this.primaryStage.setMinWidth(1024);
 
         initRootLayout();
         showMainWindow();

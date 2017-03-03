@@ -6,22 +6,24 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0"
+            prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.chashurinEvgeny.Controller.MenuController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
                 <Menu text="Файл">
                     <items>
-                        <MenuItem accelerator="F2" text="Новая игра" />
-                        <MenuItem accelerator="F3" text="Параметры" />
-                        <SeparatorMenuItem />
-                        <MenuItem accelerator="F4" text="Выход" />
+                        <MenuItem accelerator="F2" text="Открыть"/>
+                        <MenuItem accelerator="F3" text="Параметры"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem accelerator="F4" onAction="#exit" text="Выход"/>
                     </items>
                 </Menu>
                 <Menu text="Помощь">
                     <items>
-                        <MenuItem accelerator="F1" text="Справка" />
-                        <MenuItem text="О программе" />
+                        <MenuItem accelerator="F1" text="Справка"/>
+                        <MenuItem text="О программе"/>
                     </items>
                 </Menu>
             </menus>
