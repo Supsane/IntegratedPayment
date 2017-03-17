@@ -1,19 +1,28 @@
 package ru.chashurinEvgeny.Controller;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
 
-public class MainController {
-    @FXML
-    private TreeView<String> treeMO;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class MainController implements Initializable{
     @FXML
-    private AnchorPane typeProject;
+    public Button sTerPlan;
+    public Button genPlan;
+    public Button projectPlan;
+    public TextField searchTextField;
+    public AnchorPane typeProject;
+    public AnchorPane thereProject;
+    public TreeView treeMO;
 
-    @FXML
-    private AnchorPane thereProject;
 
     public void addTreePanel(ActionEvent actionEvent) {
         typeProject.setVisible(false);
@@ -27,5 +36,19 @@ public class MainController {
         typeProject.setManaged(true);
         thereProject.setVisible(false);
         thereProject.setManaged(false);
+    }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
+
+    TreeItem <String> tiRF = new TreeItem<String>("Российская Федерация");
+
+    TreeItem <String> tiAltay = new TreeItem<String>("Алтайский Край");
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        treeMO.setRoot(tiRF);
+        tiRF.getChildren().add(tiAltay);
     }
 }
