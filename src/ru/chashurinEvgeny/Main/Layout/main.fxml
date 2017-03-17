@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.chashurinEvgeny.Controller.MainController">
@@ -17,11 +18,20 @@
    <children>
       <HBox prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-               <AnchorPane fx:id="thereProject" prefWidth="220.0" visible="false" managed="false">
+               <AnchorPane fx:id="thereProject" prefHeight="768.0"  prefWidth="220.0" visible="false" managed="false">
                   <children>
-                     <TextField layoutY="2.0" prefHeight="25.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="10.0" />
-                     <Button layoutX="169.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Поиск" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0" />
-                     <TreeView fx:id="treeMO" layoutY="44.0" prefHeight="724.0" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0" />
+                  <VBox prefHeight="768.0" prefWidth="220.0">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="220.0">
+                           <children>
+                                 <TextField prefHeight="25.0" />
+                                 <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Поиск" />
+                           </children>
+                        </HBox>
+                           <TreeView fx:id="treeMO" prefHeight="724.0" prefWidth="220.0" />
+                           <Button mnemonicParsing="false" text="Назад" onAction="#back"/>
+                     </children>
+                  </VBox>
                   </children>
                </AnchorPane>
             <AnchorPane fx:id="typeProject" prefWidth="220.0">

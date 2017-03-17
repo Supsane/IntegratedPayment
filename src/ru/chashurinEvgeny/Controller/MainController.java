@@ -21,4 +21,11 @@ public class MainController {
         thereProject.setVisible(true);
         thereProject.setManaged(true);
     }
+
+    public void back(ActionEvent actionEvent) {
+        typeProject.setVisible(true);
+        typeProject.setManaged(true);
+        thereProject.setVisible(false);
+        thereProject.setManaged(false);
+    }
 }
