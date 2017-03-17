@@ -15,7 +15,7 @@ public class MainController {
     @FXML
     private AnchorPane thereProject;
 
-    public void tree(ActionEvent actionEvent) {
+    public void addTreePanel(ActionEvent actionEvent) {
         typeProject.setVisible(false);
         typeProject.setManaged(false);
         thereProject.setVisible(true);

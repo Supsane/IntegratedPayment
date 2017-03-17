@@ -16,11 +16,11 @@
       <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
    </padding>
    <children>
-      <HBox prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-               <AnchorPane fx:id="thereProject" prefHeight="768.0"  prefWidth="220.0" visible="false" managed="false">
+               <AnchorPane fx:id="thereProject" prefHeight="-Infinity" prefWidth="220.0" visible="false" managed="false">
                   <children>
-                  <VBox prefHeight="768.0" prefWidth="220.0">
+                  <VBox prefWidth="220.0">
                      <children>
                         <HBox prefHeight="40.0" prefWidth="220.0">
                            <children>
@@ -28,8 +28,12 @@
                                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Поиск" />
                            </children>
                         </HBox>
-                           <TreeView fx:id="treeMO" prefHeight="724.0" prefWidth="220.0" />
-                           <Button mnemonicParsing="false" text="Назад" onAction="#back"/>
+                        <VBox>
+                           <children>
+                              <TreeView fx:id="treeMO" prefHeight="768.0" prefWidth="220.0" />
+                              <Button mnemonicParsing="false" text="Назад" onAction="#back"/>
+                           </children>
+                        </VBox>
                      </children>
                   </VBox>
                   </children>
@@ -51,9 +55,9 @@
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="sTerPlan" layoutX="84.0" layoutY="330.0" mnemonicParsing="false" onAction="#tree" prefWidth="60.0" text="СТП" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="330.0" />
-                  <Button fx:id="genPlan" layoutX="84.0" layoutY="360.0" mnemonicParsing="false" onAction="#tree" prefWidth="60.0" text="ГП" AnchorPane.topAnchor="360.0" />
-                  <Button fx:id="projectPlan" layoutX="84.0" layoutY="390.0" mnemonicParsing="false" onAction="#tree" prefWidth="60.0" text="ПП" AnchorPane.topAnchor="390.0" />
+                  <Button fx:id="sTerPlan" layoutX="84.0" layoutY="330.0" mnemonicParsing="false" onAction="#addTreePanel" prefWidth="60.0" text="СТП" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="330.0" />
+                  <Button fx:id="genPlan" layoutX="84.0" layoutY="360.0" mnemonicParsing="false" onAction="#addTreePanel" prefWidth="60.0" text="ГП" AnchorPane.topAnchor="360.0" />
+                  <Button fx:id="projectPlan" layoutX="84.0" layoutY="390.0" mnemonicParsing="false" onAction="#addTreePanel" prefWidth="60.0" text="ПП" AnchorPane.topAnchor="390.0" />
                </children>
             </AnchorPane>
             <Separator orientation="VERTICAL" prefHeight="768.0" prefWidth="13.0">
