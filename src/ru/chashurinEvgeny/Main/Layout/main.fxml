@@ -81,6 +81,7 @@
                   </HBox>
                   <TreeView fx:id="treeMO" prefWidth="210.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
                   <Button mnemonicParsing="false" onAction="#back" text="Назад" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+                  <Button layoutX="10.0" layoutY="10.0" disable="true" mnemonicParsing="false" onAction="#back" text="Выбрать" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0" />
                </children>
             </AnchorPane>
             <Separator orientation="VERTICAL" prefWidth="13.0">

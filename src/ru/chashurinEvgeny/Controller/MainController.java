@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
+import ru.chashurinEvgeny.Main.Main;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,6 +30,7 @@ public class MainController implements Initializable{
         typeProject.setManaged(false);
         thereProject.setVisible(true);
         thereProject.setManaged(true);
+        if (sTerPlan.isPressed()) Main.mainStage.setTitle("Комплексный расчет: Схема территориального планирования");
     }
 
     public void back(ActionEvent actionEvent) {
