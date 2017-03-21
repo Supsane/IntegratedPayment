@@ -100,14 +100,14 @@
             </AnchorPane>
          </children>
       </HBox>
-      <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" fx:id="mainPanel" visible="false" managed="false">
+      <AnchorPane fx:id="mainPanel" managed="false" visible="false" disable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
          <children>
             <Label alignment="CENTER" text="Введите необходимые параметры" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </Label>
-            <TabPane layoutX="14.0" layoutY="-50.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <TabPane layoutX="14.0" layoutY="-50.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
               <tabs>
                 <Tab text="Демография">
                   <content>
@@ -115,8 +115,13 @@
                            <children>
                               <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
+                                  <TableColumn maxWidth="35" minWidth="35" text="№ &#10;п/п" />
+                                  <TableColumn prefWidth="130.0" text="Населенные пункты &#10;в составе МО" />
+                                    <TableColumn minWidth="0.0" prefWidth="110.0" text="Постоянно&#10;проживающее&#10;население" />
+                                    <TableColumn prefWidth="150.0" text="C2" />
+                                    <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
                                 </columns>
                               </TableView>
                            </children>
@@ -139,6 +144,7 @@
                 </Tab>
               </tabs>
             </TabPane>
+            <Button mnemonicParsing="false" text="Посчитать" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
          </children>
       </AnchorPane>
    </children>
