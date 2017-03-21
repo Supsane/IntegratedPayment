@@ -33,7 +33,7 @@ public class MainController implements Initializable{
         thereProject.setManaged(true);
         mainPanel.setVisible(true);
         mainPanel.setManaged(true);
-        if (sTerPlan.isPressed()) Main.mainStage.setTitle("Комплексный расчет: Схема территориального планирования");
+        Main.mainStage.setTitle("Комплексный расчет: Схема территориального планирования");
     }
 
     public void back(ActionEvent actionEvent) {
