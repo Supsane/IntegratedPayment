@@ -74,7 +74,12 @@
             </AnchorPane>
             <AnchorPane fx:id="thereProject" managed="false" prefWidth="220.0" visible="false">
                <children>
-                  <HBox prefHeight="40.0" prefWidth="220.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <Label alignment="CENTER" text="Выберите место разработки" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="40.0" prefWidth="220.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
                      <children>
                         <TextField fx:id="searchTextField" prefHeight="25.0" prefWidth="153.0">
                            <HBox.margin>
@@ -88,9 +93,9 @@
                         </Button>
                      </children>
                   </HBox>
-                  <TreeView fx:id="treeMO" prefWidth="210.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
-                  <Button mnemonicParsing="false" onAction="#back" text="Назад" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
-                  <Button disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#back" text="Выбрать" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <TreeView fx:id="treeMO" prefWidth="210.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0" />
+                  <Button mnemonicParsing="false" onAction="#back" text="Назад" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" />
+                  <Button disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#back" text="Выбрать" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
                   <Separator orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="224.0" AnchorPane.topAnchor="0.0">
                      <opaqueInsets>
                         <Insets left="5.0" right="5.0" />
@@ -100,7 +105,7 @@
             </AnchorPane>
          </children>
       </HBox>
-      <AnchorPane fx:id="mainPanel" managed="false" visible="false" disable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+      <AnchorPane fx:id="mainPanel" disable="true" managed="false" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
          <children>
             <Label alignment="CENTER" text="Введите необходимые параметры" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
                <font>
