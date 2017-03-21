@@ -8,6 +8,8 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -60,9 +62,9 @@
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="sTerPlan" layoutX="80.0" layoutY="330.0" mnemonicParsing="false" onAction="#addTreePanel" prefWidth="60.0" text="СТП" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="330.0" />
-                  <Button fx:id="genPlan" layoutX="84.0" layoutY="360.0" mnemonicParsing="false" onAction="#addTreePanel" prefWidth="60.0" text="ГП" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="360.0" />
-                  <Button fx:id="projectPlan" layoutX="84.0" layoutY="390.0" mnemonicParsing="false" onAction="#addTreePanel" prefWidth="60.0" text="ПП" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="390.0" />
+                  <Button fx:id="sTerPlan" layoutX="80.0" layoutY="330.0" mnemonicParsing="false" onAction="#addMainPanel" prefWidth="60.0" text="СТП" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="330.0" />
+                  <Button fx:id="genPlan" layoutX="84.0" layoutY="360.0" mnemonicParsing="false" onAction="#addMainPanel" prefWidth="60.0" text="ГП" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="360.0" />
+                  <Button fx:id="projectPlan" layoutX="84.0" layoutY="390.0" mnemonicParsing="false" onAction="#addMainPanel" prefWidth="60.0" text="ПП" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="390.0" />
                   <Separator orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="224.0" AnchorPane.topAnchor="0.0">
                      <opaqueInsets>
                         <Insets left="5.0" right="5.0" />
@@ -98,19 +100,45 @@
             </AnchorPane>
          </children>
       </HBox>
-      <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+      <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" fx:id="mainPanel" visible="false" managed="false">
          <children>
             <Label alignment="CENTER" text="Введите необходимые параметры" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </Label>
-            <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
-            </TableView>
+            <TabPane layoutX="14.0" layoutY="-50.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+              <tabs>
+                <Tab text="Демография">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Жилой фонд">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="C1" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
          </children>
       </AnchorPane>
    </children>

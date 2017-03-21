@@ -23,13 +23,16 @@ public class MainController implements Initializable{
     public AnchorPane typeProject;
     public AnchorPane thereProject;
     public TreeView treeMO;
+    public AnchorPane mainPanel;
 
 
-    public void addTreePanel(ActionEvent actionEvent) {
+    public void addMainPanel(ActionEvent actionEvent) {
         typeProject.setVisible(false);
         typeProject.setManaged(false);
         thereProject.setVisible(true);
         thereProject.setManaged(true);
+        mainPanel.setVisible(true);
+        mainPanel.setManaged(true);
         if (sTerPlan.isPressed()) Main.mainStage.setTitle("Комплексный расчет: Схема территориального планирования");
     }
 
