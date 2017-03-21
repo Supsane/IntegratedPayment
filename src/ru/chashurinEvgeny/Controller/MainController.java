@@ -54,6 +54,7 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         treeMO.setRoot(tiRF);
         tiRF.getChildren().add(tiAltay);
+        tiRF.setExpanded(true);
     }
 
     public void selectProjPlanButton(ActionEvent actionEvent) {
