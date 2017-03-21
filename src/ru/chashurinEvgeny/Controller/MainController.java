@@ -14,7 +14,7 @@ import ru.chashurinEvgeny.Main.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable{
+public class MainController implements Initializable {
     @FXML
     public Button sTerPlan;
     public Button genPlan;
@@ -25,15 +25,13 @@ public class MainController implements Initializable{
     public TreeView treeMO;
     public AnchorPane mainPanel;
 
-
-    public void addMainPanel(ActionEvent actionEvent) {
+    public void setVisibility() {
         typeProject.setVisible(false);
         typeProject.setManaged(false);
         thereProject.setVisible(true);
         thereProject.setManaged(true);
         mainPanel.setVisible(true);
         mainPanel.setManaged(true);
-        Main.mainStage.setTitle("Комплексный расчет: Схема территориального планирования");
     }
 
     public void back(ActionEvent actionEvent) {
@@ -41,19 +39,35 @@ public class MainController implements Initializable{
         typeProject.setManaged(true);
         thereProject.setVisible(false);
         thereProject.setManaged(false);
+        Main.mainStage.setTitle("Комплексный расчет");
     }
 
     public void exit(ActionEvent actionEvent) {
         System.exit(0);
     }
 
-    TreeItem <String> tiRF = new TreeItem<String>("Российская Федерация");
+    TreeItem<String> tiRF = new TreeItem<String>("Российская Федерация");
 
-    TreeItem <String> tiAltay = new TreeItem<String>("Алтайский Край");
+    TreeItem<String> tiAltay = new TreeItem<String>("Алтайский Край");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         treeMO.setRoot(tiRF);
         tiRF.getChildren().add(tiAltay);
+    }
+
+    public void selectProjPlanButton(ActionEvent actionEvent) {
+        setVisibility();
+        Main.mainStage.setTitle("Комплексный расчет: Проект планировки");
+    }
+
+    public void selectGenPlanButton(ActionEvent actionEvent) {
+        setVisibility();
+        Main.mainStage.setTitle("Комплексный расчет: Генеральный план");
+    }
+
+    public void selectTerPlanButton(ActionEvent actionEvent) {
+        setVisibility();
+        Main.mainStage.setTitle("Комплексный расчет: Схема территориального планирования");
     }
 }
