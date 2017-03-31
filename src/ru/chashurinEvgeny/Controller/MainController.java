@@ -1,7 +1,6 @@
 package ru.chashurinEvgeny.Controller;
 
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,12 +10,22 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
 import ru.chashurinEvgeny.Main.Main;
+
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.sql.*;
 
 public class MainController implements Initializable, ConnectService {
     private Connection connection;
+    private PreparedStatement psOblastID;
+    private PreparedStatement psGorodID;
+    private PreparedStatement psRayonID;
+    private PreparedStatement psSelsovetID;
+    private PreparedStatement psOblastName;
+    private PreparedStatement psGorodName;
+    private PreparedStatement psRayonName;
+    private PreparedStatement psSelsovetName;
 
     @FXML
     public Button sTerPlan;
@@ -27,6 +36,9 @@ public class MainController implements Initializable, ConnectService {
     public AnchorPane thereProject;
     public TreeView treeMO;
     public AnchorPane mainPanel;
+
+    public MainController() throws SQLException {
+    }
 
     public void setVisibility() {
         typeProject.setVisible(false);
@@ -58,6 +70,9 @@ public class MainController implements Initializable, ConnectService {
         try {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:IntegratedPayment.db");
+            psOblastID = connection.prepareStatement("SELECT Obl_ID FROM Municipalities;");
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,6 +83,28 @@ public class MainController implements Initializable, ConnectService {
 * их как мне кажется в массивы, потом сформировать дерево из всего этого
 *
 * ===========================================*/
+
+    ArrayList<Integer> OblastID = new ArrayList<Integer>();
+    ArrayList<Integer> GorodID = new ArrayList<Integer>();
+    ArrayList<Integer> RayonID = new ArrayList<Integer>();
+    ArrayList<Integer> SelsovetID = new ArrayList<Integer>();
+    ArrayList<String> OblastName = new ArrayList<String>();
+    ArrayList<String> GorodName = new ArrayList<String>();
+    ArrayList<String> RayonName = new ArrayList<String>();
+    ArrayList<String> SelsovetName = new ArrayList<String>();
+
+
+    public void fillIDTree () {
+        try {
+            ResultSet resPsOblastID = psOblastID.executeQuery();
+            while (resPsOblastID.next()) {
+                OblastID.add(resPsOblastID.getInt(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void disconnectDB() {
         try {
