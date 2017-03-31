@@ -13,6 +13,7 @@ import ru.chashurinEvgeny.Main.Main;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.sql.*;
 
@@ -61,16 +62,12 @@ public class MainController implements Initializable, ConnectService {
         System.exit(0);
     }
 
-    TreeItem<String> tiRF = new TreeItem<String>("Российская Федерация");
-
-    TreeItem<String> tiAltay = new TreeItem<String>("Алтайский Край");
-
     @Override
     public void connectDB() {
         try {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:IntegratedPayment.db");
-            psOblastID = connection.prepareStatement("SELECT Obl_ID FROM Municipalities;");
+            psOblastID = connection.prepareStatement("SELECT Oblast FROM Municipalities;");
 
 
         } catch (Exception e) {
@@ -93,12 +90,11 @@ public class MainController implements Initializable, ConnectService {
     ArrayList<String> RayonName = new ArrayList<String>();
     ArrayList<String> SelsovetName = new ArrayList<String>();
 
-
-    public void fillIDTree () {
+    public void fillOblastID () {
         try {
             ResultSet resPsOblastID = psOblastID.executeQuery();
             while (resPsOblastID.next()) {
-                OblastID.add(resPsOblastID.getInt(1));
+                OblastName.add(resPsOblastID.getString(5));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,8 +112,19 @@ public class MainController implements Initializable, ConnectService {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        TreeItem<String> tiRF = new TreeItem<String>("Российская Федерация");
+        TreeItem<String> tiAltay = new TreeItem<String>("Алтайский Край");
+
+        fillOblastID();
+        Iterator<String> itr = OblastName.iterator();
+        while (itr.hasNext()) {
+            String nameOblast = itr.next();
+            TreeItem <String> idTree = new TreeItem<String>(nameOblast);
+            tiRF.getChildren().add(idTree);
+        }
+
         treeMO.setRoot(tiRF);
-        tiRF.getChildren().add(tiAltay);
+//        tiRF.getChildren().add(tiAltay);
         tiRF.setExpanded(true);
     }
 
